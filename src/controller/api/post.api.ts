@@ -71,6 +71,16 @@ class postController {
       res.status(500).json(error);
     }
   };
+  getAllPost = async (req: Request, res: Response) => {
+
+    try {
+      const posts = await Post.find().populate('user');
+      console.log('ok' + posts);
+      res.status(200).json(posts);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  };
 
   //LIKE POST
   likeAPost = async (req: Request, res: Response) => {

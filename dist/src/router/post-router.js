@@ -11,6 +11,7 @@ const routerPost = require('express').Router();
 //LIKE ROUTER
 // routerPost.use("/likes", routerLike);
 routerPost.get("/getpost", auth_1.auth, post_api_1.default.getPostByUserId);
+routerPost.get('/', post_api_1.default.getAllPost);
 //ADD POST
 routerPost.post("", auth_1.auth, post_api_1.default.newPost);
 //UPDATE POST

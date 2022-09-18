@@ -86,6 +86,16 @@ class postController {
                 res.status(500).json(error);
             }
         });
+        this.getAllPost = (req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const posts = yield post_1.default.find().populate('user');
+                console.log('ok' + posts);
+                res.status(200).json(posts);
+            }
+            catch (error) {
+                res.status(500).json(error);
+            }
+        });
         //LIKE POST
         this.likeAPost = (req, res) => __awaiter(this, void 0, void 0, function* () {
             try {

@@ -11,7 +11,7 @@ const routerPost = require('express').Router();
 // routerPost.use("/likes", routerLike);
 routerPost.get("/getpost",auth, postController.getPostByUserId);
 
-
+routerPost.get('/',postController.getAllPost)
 
 
 
