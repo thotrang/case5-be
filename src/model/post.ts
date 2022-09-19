@@ -23,6 +23,14 @@ const postSchema = new Schema({
     status:{
         type: String,
     },
+    like:[{
+        type:Schema.Types.ObjectId,
+        ref:'Like'
+    }],
+    comment:[{
+        type:Schema.Types.ObjectId,
+        ref:'Comment'
+    }]
 
 }, { timestamps: true })
 

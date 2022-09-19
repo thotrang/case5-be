@@ -35,7 +35,7 @@ class postController {
   getAPost = async (req: any, res: Response) => {
     try {
       let id = req.params.id;
-      const post = await Post.findById(id).populate("user");
+      const post = await Post.findById(id).populate("userId");
       res.status(200).json(post);
     } catch (error) {
       res.status(500).json(error);
@@ -74,8 +74,7 @@ class postController {
   getAllPost = async (req: Request, res: Response) => {
 
     try {
-      const posts = await Post.find().populate('user');
-      console.log('ok' + posts);
+      const posts = await Post.find().populate('userId');
       res.status(200).json(posts);
     } catch (error) {
       res.status(500).json(error);

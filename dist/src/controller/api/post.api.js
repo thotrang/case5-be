@@ -47,7 +47,7 @@ class postController {
         this.getAPost = (req, res) => __awaiter(this, void 0, void 0, function* () {
             try {
                 let id = req.params.id;
-                const post = yield post_1.default.findById(id).populate("user");
+                const post = yield post_1.default.findById(id).populate("userId");
                 res.status(200).json(post);
             }
             catch (error) {
@@ -88,8 +88,7 @@ class postController {
         });
         this.getAllPost = (req, res) => __awaiter(this, void 0, void 0, function* () {
             try {
-                const posts = yield post_1.default.find().populate('user');
-                console.log('ok' + posts);
+                const posts = yield post_1.default.find().populate('userId');
                 res.status(200).json(posts);
             }
             catch (error) {
